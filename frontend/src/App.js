@@ -1,16 +1,19 @@
 import "./App.css";
 import Login from "./components/login/Login";
-import Channels from "./components/channels/Channels";
-import Messages from "./components/messages/Messages";
-import People from "./components/people/People"; // for   <People/>
+import HomePage from "./components/home-page/HomePage";
+
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <Login />
-      <Channels />
-      <Messages />
+      <Routes>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/" element={<HomePage />}/>
+      </Routes>
     </div>
+    </Router>
   );
 }
 

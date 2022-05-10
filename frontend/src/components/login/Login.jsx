@@ -1,9 +1,14 @@
-import './styles.css';
+import "./styles.css";
 
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
-    <div>Login</div>
-  )
+    <div className="login-form">
+      <Link to={"/"}>
+        <button>Login</button>
+      </Link>
+    </div>
+  );
 }

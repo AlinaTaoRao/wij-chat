@@ -1,0 +1,19 @@
+.home {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(50px, auto);  
+    grid-gap:5px;
+    grid-template-areas:
+    "title title title title"
+    "channels messages messages people"
+    "channels messages messages people"
+    "channels messages messages people"
+    "channels messages messages people"
+    "channels messages messages people"
+    "channels messages messages people";
+
+}
+
+.title {
+    grid-area: title;
+}

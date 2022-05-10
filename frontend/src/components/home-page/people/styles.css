@@ -1,0 +1,7 @@
+.people {
+    font-size: small;
+    color: red;
+    line-height: 1.5;
+    border: 2px solid greenyellow; 
+    grid-area: people;
+}

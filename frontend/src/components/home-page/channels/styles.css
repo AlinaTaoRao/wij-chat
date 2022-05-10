@@ -1,0 +1,7 @@
+.channels {
+    font-size: medium;
+    color: blue;
+    line-height: 1.5;
+    border: 2px solid black; 
+    grid-area: channels;
+}
