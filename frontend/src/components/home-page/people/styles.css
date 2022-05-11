@@ -4,4 +4,9 @@
     line-height: 1.5;
     border: 2px solid greenyellow; 
     grid-area: people;
+    text-align: start;
+}
+
+.user {
+    padding: 3px 10px;
 }

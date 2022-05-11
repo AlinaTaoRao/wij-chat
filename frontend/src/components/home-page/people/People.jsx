@@ -1,5 +1,5 @@
 import './styles.css';
-import useFetch from '../../../logic/useFetch';
+import useFetch from '../../../my-hook/useFetch';
 import { localhostUrl } from '../../../config';
 
 import React from 'react';
@@ -14,7 +14,7 @@ export default function People() {
   return (
     <div className='people'>{data.map((user, index) => (
       <div key={index} className="user">
-      <h3>{user.username}</h3>
+      <p className='single-user' data-user-id={user.id}>{user.username}</p>
     </div>
     ))}</div>
   )
