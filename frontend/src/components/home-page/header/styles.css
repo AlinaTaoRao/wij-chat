@@ -26,6 +26,9 @@
     min-height: inherit;
 }
 
-.sign-in-btn{
-    padding: 5px 10px;
+.to-sign-in {
+    margin: auto 15px;
 }
+
+/* .to-sign-up {
+} */
