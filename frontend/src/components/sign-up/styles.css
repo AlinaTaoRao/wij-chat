@@ -1,3 +1,15 @@
+.title-container {
+    background-color: rgb(221, 203, 238);
+    padding: 50px auto;
+    margin: 50px auto;
+}
+
+.title-sign {
+    background-color: rgb(221, 203, 238);
+   border: 2px solid red;
+
+}
+
 .sign-up-form {
     width: 35vw;
     margin: 5px auto;

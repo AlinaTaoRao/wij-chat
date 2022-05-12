@@ -2,11 +2,12 @@ import "./styles.css";
 import useFetch from "../../../my-hook/useFetch";
 import { localhostUrl } from "../../../config";
 import { curData } from "../../../data";
+import { jwt } from "../../../config";
 
 import React from "react";
 import { useState } from "react";
 
-export default function Channels() {
+export default function Channels({handleSwitchCh}) {
   const url = `${localhostUrl}/channels`;
 
   const [channelName, setChannelName] = useState("");
@@ -23,6 +24,11 @@ export default function Channels() {
   // const handleInput = () => {
 
   // }
+
+  /* define handler fn */
+
+
+
 
   const handleChannel = () => {
     // const title = channelName;
@@ -52,7 +58,7 @@ export default function Channels() {
       <div className="channels">
         {data.data.map((channel, index) => (
           <div key={index} className="channel">
-            <p className="single-channel" data-channel-id={channel.id}>
+            <p className="single-channel" id={channel.id} onClick={handleSwitchCh}>
               {channel.attributes.title}
             </p>
           </div>
@@ -71,7 +77,7 @@ export default function Channels() {
           <button
             className="add-channel"
             id="add-channel"
-            onClick={handleChannel()}
+            onClick={handleChannel}
           >
             +
           </button>
@@ -86,5 +92,17 @@ export default function Channels() {
 React Input Element : Value vs Default Value
 <input type="text" value={this.state.inputVal} onChange={(e) => {this.setState({inputVal: e.target.value})}} />
 https://stackoverflow.com/questions/42807901/react-input-element-value-vs-default-value
+
+*/
+
+/* 
+ "data":{
+    "users_permissions_users": {
+        "id": 8
+    },
+    "initiator": "testAli2",
+    "title": "# Ali's channel-1"
+
+    }
 
 */

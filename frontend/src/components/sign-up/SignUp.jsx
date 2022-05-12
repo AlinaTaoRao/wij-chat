@@ -13,6 +13,11 @@ export default function SignUp() {
 
   return (
     <div className="sign-up">
+       <Link to="/">
+         <div className='title-container'>
+         <h1 className="title-sign">Wij Chat</h1>
+         </div>
+      </Link>
       <form className="sign-up-form">
         <input
           type="text"

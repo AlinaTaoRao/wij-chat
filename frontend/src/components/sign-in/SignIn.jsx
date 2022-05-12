@@ -10,6 +10,11 @@ export default function SignIn({ handleSignIn, handleSignUp }) {
 
   return (
     <div className="sign-in">
+      <Link to="/">
+        <div className="title-container">
+          <h1 className="title-sign">Wij Chat</h1>
+        </div>
+      </Link>
       <form className="sign-in-form">
         <input
           type="text"
