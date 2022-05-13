@@ -7,12 +7,11 @@ import { jwt } from "../../../config";
 import React from "react";
 import { useState } from "react";
 
-
-/* way 1: highlight current channel by checkbox, works */
+/* way 1: highlight current channel by checkbox; highlight default ch, works */
 export default function Channels({ handleSwitchCh }) {
   /* get channels data */
   const [channelName, setChannelName] = useState("");
-  // define url, fetch data 
+  // define url, fetch data
   const url = `${localhostUrl}/channels`;
   const { data, error, loading } = useFetch(url);
   console.log(data);
@@ -55,14 +54,24 @@ export default function Channels({ handleSwitchCh }) {
       <div className="channels">
         {data.data.map((channel, index) => (
           <div key={index} className="channel">
-            <input type="checkbox" className="check-ch"/>
-            <p
-              className="single-channel"
-              id={channel.id}
-              onClick={handleSwitchCh}
-            >
-              {channel.attributes.title}
-            </p>
+            <input type="checkbox" className="check-ch" />
+            {channel.id === 1 ? (
+              <p
+                className="single-channel default-ch"
+                id={channel.id}
+                onClick={handleSwitchCh}
+              >
+                {channel.attributes.title}
+              </p>
+            ) : (
+              <p
+                className="single-channel"
+                id={channel.id}
+                onClick={handleSwitchCh}
+              >
+                {channel.attributes.title}
+              </p>
+            )}
           </div>
         ))}
       </div>

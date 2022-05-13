@@ -47,6 +47,6 @@
 }
 
 /* for highlight current channel way 2: ternary */
-.cur-ch {
+.default-ch {
   background-color: rgb(180, 243, 169);
 }
