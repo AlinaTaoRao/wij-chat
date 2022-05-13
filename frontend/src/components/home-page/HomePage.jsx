@@ -20,7 +20,7 @@ export default function HomePage() {
       <Header />
       <Channels
         handleSwitchCh={(e) => {
-          console.log("you clicked me!");
+          // console.log("you clicked me!");
           curData.curCh=e.target.id;
           console.log("e.target.id:", e.target.id);
           setUrl(`${localhostUrl}/channels/${e.target.id}?populate=messages`);
@@ -34,9 +34,6 @@ export default function HomePage() {
   );
 }
 
-/* 
-document.getElementById("checkbox").checked = false;
-*/
 
 /* way 1, pass url or curChUrl to Message, not work, "unexpected token < at position 0" */
 // export default function HomePage() {

@@ -7,6 +7,8 @@ import { jwt } from "../../../config";
 import React from "react";
 import { useState } from "react";
 
+
+/* way 1: highlight current channel by checkbox, works */
 export default function Channels({ handleSwitchCh }) {
   /* get channels data */
   const [channelName, setChannelName] = useState("");

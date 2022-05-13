@@ -1,5 +1,5 @@
 export const curData = {
-    curCh:null,
+    curCh:1,
     curUser:null,
     curUserId:null
 };

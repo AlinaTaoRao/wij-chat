@@ -37,11 +37,16 @@
   padding: 5px 10px;
 }
 
-/* highlight  last clicked channel*/
+/* highlight last clicked channel by checkbox*/
 .check-ch {
   display: none;
 }
 
 .check-ch:checked + .single-channel {
   background-color: rgb(203, 169, 234);
+}
+
+/* for highlight current channel way 2: ternary */
+.cur-ch {
+  background-color: rgb(180, 243, 169);
 }

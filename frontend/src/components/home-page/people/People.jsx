@@ -3,7 +3,7 @@ import useFetch from "../../../my-hook/useFetch";
 import { localhostUrl } from "../../../config";
 import { curData } from "../../../data";
 
-import React, { useState } from "react";
+import React, { useState } from "react"; // for way 1
 
 /* way 2: highlight current user ternary, curData.curUser?, works, best way! */
 export default function People() {
