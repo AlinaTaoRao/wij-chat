@@ -1,3 +1,4 @@
+
 .people {
     font-size: small;
     color: red;
@@ -12,5 +13,8 @@
 }
 
 /* highlight  the user who's sign in */
-
+.cur-usr {
+    background-color: rgb(177, 245, 181);
+    text-decoration: underline;
+}
 

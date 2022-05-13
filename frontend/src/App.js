@@ -15,15 +15,8 @@ function App() {
   const activeUser = () => {
     
   };
-  /* document.querySelectorAll("[data-foo='1']")
- sizeChoice = sizeEl.dataset.size;
- */
-/* 
-var list= document.getElementsByClassName("events");
-[].forEach.call(list, function(el) {
-    console.log(el.id);
-});
-*/
+
+
   return (
     <Router>
       <div className="App">
