@@ -14,7 +14,6 @@ export default function People() {
   return (
     <div className='people'>{data.map((user, index) => (
       <div key={index} className="user">
-        <input type="checkbox" className='check-user' data-usn={user.username}/>
       <p className='single-user' id={user.id} data-username={user.username}>{user.username}</p>
     </div>
     ))}</div>

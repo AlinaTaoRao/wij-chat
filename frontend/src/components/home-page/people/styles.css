@@ -12,11 +12,5 @@
 }
 
 /* highlight  the user who's sign in */
-/* .check-user {
-    display: none;
-} */
 
-.check-user:checked + .single-user {
-    background-color: rgb(203, 169, 234);
-}
 
