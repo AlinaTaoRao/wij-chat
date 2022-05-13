@@ -23,7 +23,9 @@ export default function HomePage() {
           console.log("you clicked me!");
           curData.curCh=e.target.id;
           console.log("e.target.id:", e.target.id);
-          setUrl(`${localhostUrl}/channels/${e.target.id}?populate=messages`);        
+          setUrl(`${localhostUrl}/channels/${e.target.id}?populate=messages`);
+         document.querySelectorAll(".check-ch").forEach(e => e.checked=false);
+          e.target.parentElement.children[0].checked=true;       
         }}
       />
       <Messages />
@@ -32,6 +34,9 @@ export default function HomePage() {
   );
 }
 
+/* 
+document.getElementById("checkbox").checked = false;
+*/
 
 /* way 1, pass url or curChUrl to Message, not work, "unexpected token < at position 0" */
 // export default function HomePage() {

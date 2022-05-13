@@ -1,12 +1,29 @@
 import "./styles.css";
+import { curData } from "../../data";
+import { localhostUrl } from "../../config";
+import useFetch from "../../my-hook/useFetch";
 
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function SignIn({ handleSignIn, handleSignUp }) {
-  const [username, setUsername] = useState("");
+export default function SignIn({
+  username,
+  handleUsernameInput,
+  handleSignIn,
+  handleSignUp,
+}) {
+  // const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  // const [userId, setUserId] = useState("");
+
+  // const url = `${localhostUrl}/users?filters[username][$eq]=${username}`;
+  // const { data, error, loading } = useFetch(url);
+  // console.log(data);
+
+  // if (loading) return <p> Loading</p>;
+  // if (error) return <p> Oops, there is something wrong :(</p>;
+  // if (data.id) setUserId(data.id);
 
   return (
     <div className="sign-in">
@@ -20,7 +37,14 @@ export default function SignIn({ handleSignIn, handleSignUp }) {
           type="text"
           className="username-input"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={
+            //   (e) => {
+            //   curData.curUser = e.target.value;
+            //   console.log("cur user?:", curData.curUser);
+            //   setUsername(e.target.value);
+            // }
+            handleUsernameInput
+          }
           placeholder="Username"
           required
         />

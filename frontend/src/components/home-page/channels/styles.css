@@ -36,3 +36,12 @@
   min-height: inherit;
   padding: 5px 10px;
 }
+
+/* highlight  last clicked channel*/
+.check-ch {
+  display: none;
+}
+
+.check-ch:checked + .single-channel {
+  background-color: rgb(203, 169, 234);
+}

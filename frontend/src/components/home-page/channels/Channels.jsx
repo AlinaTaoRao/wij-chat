@@ -7,58 +7,58 @@ import { jwt } from "../../../config";
 import React from "react";
 import { useState } from "react";
 
-export default function Channels({handleSwitchCh}) {
-  const url = `${localhostUrl}/channels`;
-
+export default function Channels({ handleSwitchCh }) {
+  /* get channels data */
   const [channelName, setChannelName] = useState("");
+  // define url, fetch data 
+  const url = `${localhostUrl}/channels`;
   const { data, error, loading } = useFetch(url);
   console.log(data);
-
   if (loading) return <p> Loading</p>;
   if (error) return <p> Oops, there is something wrong :(</p>;
 
-  /* get user input */
-  // const title = document.getElementById("channel-input").value;
+  /* define handlers */
+  const handleNewChannel = () => {
+    const title = channelName;
+    const initiator = curData.curUser;
+    // const curUserId = curData.curUserId;
+    async function addChannel(title, initiator) {
+      const body = {
+        data: {
+          users_permissions_users: {
+            id: 8,
+          },
+          title: `# ${title}`,
+          initiator: initiator,
+        },
+      };
 
-  // define handler fn
-  // const handleInput = () => {
-
-  // }
-
-  /* define handler fn */
-
-
-
-
-  const handleChannel = () => {
-    // const title = channelName;
-    // const initiator = curData.curUser;
-    // async function addChannel(title, initiator) {
-    //   const body = {
-    //     data: {
-    //       title: title,
-    //       initiator: initiator,
-    //     },
-    //   };
-
-    //   const response = await fetch(url, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(body),
-    //   });
-    //   console.log("run handleChannel");
-    //   return response.json();
-    // }
-    // addChannel(title, initiator);
+      const token = jwt;
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(body),
+      });
+      console.log("run handleChannel");
+      return response.json();
+    }
+    addChannel(title, initiator);
   };
+
   return (
     <div className="channel-col">
       <div className="channels">
         {data.data.map((channel, index) => (
           <div key={index} className="channel">
-            <p className="single-channel" id={channel.id} onClick={handleSwitchCh}>
+            <input type="checkbox" className="check-ch"/>
+            <p
+              className="single-channel"
+              id={channel.id}
+              onClick={handleSwitchCh}
+            >
               {channel.attributes.title}
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function Channels({handleSwitchCh}) {
           <button
             className="add-channel"
             id="add-channel"
-            onClick={handleChannel}
+            onClick={handleNewChannel}
           >
             +
           </button>
@@ -86,23 +86,3 @@ export default function Channels({handleSwitchCh}) {
     </div>
   );
 }
-
-/* ref: */
-/* 
-React Input Element : Value vs Default Value
-<input type="text" value={this.state.inputVal} onChange={(e) => {this.setState({inputVal: e.target.value})}} />
-https://stackoverflow.com/questions/42807901/react-input-element-value-vs-default-value
-
-*/
-
-/* 
- "data":{
-    "users_permissions_users": {
-        "id": 8
-    },
-    "initiator": "testAli2",
-    "title": "# Ali's channel-1"
-
-    }
-
-*/

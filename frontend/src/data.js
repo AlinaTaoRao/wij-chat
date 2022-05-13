@@ -1,4 +1,5 @@
 export const curData = {
     curCh:null,
-    curUser:null
+    curUser:null,
+    curUserId:null
 };

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url) => {
+const useFetch = (url, msgLength) => {
   // const state
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  // const [rerender, setRerender] = useState(false);
 
   // define fetch data function
   useEffect(() => {
@@ -27,7 +28,7 @@ const useFetch = (url) => {
     };
 
     fetchData();
-  }, [url]);
+  }, [url, msgLength]);
 
   return { data, error, loading };
 };
